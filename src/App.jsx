@@ -10,7 +10,7 @@ function App() {
     fetch(`https://newsapi.org/v2/everything?q=${category}&from=2024-09-12&apiKey=7af293154a7a46aeb929b9e31940adbf`)
     .then((response)=>{
       if(!response.ok){
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`HTTP error! status: ${response.json}`);
       }
       return response.json();
     })
